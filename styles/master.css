@@ -9,3 +9,20 @@ body {
   box-sizing: border-box;
   background: #5C07E2;
 }
+
+ /* Делаю 320*568 */
+
+main {
+  width: 100vw;
+  height: 300vh;
+}
+div {
+  margin: 120px 70px;
+}
+p {
+  color: #ff0000;
+  font-family: Roboto;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 107%;
+}
