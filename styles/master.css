@@ -49,7 +49,7 @@ p {
 .third img {
   position: absolute;
   transform: rotate(15deg);
-  width: 200vw;
-  top: 184vh;
+  width: 220vw;
+  top: 187vh;
   left: -50%;
 }
