@@ -12,17 +12,41 @@ body {
 
  /* Делаю 320*568 */
 
-main {
-  width: 100vw;
-  height: 300vh;
-}
 div {
-  margin: 120px 70px;
+  margin: 10vh 10vw;
+  width: 80vw;
+  height: 80vh;
+  background: white;
 }
 p {
   color: #ff0000;
   font-family: Roboto;
   font-weight: 900;
-  font-size: 30px;
+  font-size: 620%;
   line-height: 107%;
+  padding-top: 130%;
+}
+.h {
+  top: 30vh;
+  left: 10vw;
+  position: fixed;
+  width: 80vw;
+}
+.head_1 {
+  position: absolute;
+  top: 5%;
+  left: -20%;
+  transform: rotate(30deg);
+}
+.head_2 {
+  position: absolute;
+  top: 80vh;
+  left: -100%;
+  transform: rotate(-15deg);
+}
+.head_3 {
+  position: absolute;
+  top: 190vh;
+  left: -55%;
+  transform: rotate(20deg);
 }
