@@ -56,7 +56,6 @@ body {
 }
 p {
   z-index: 1;
-  text-align: justify;
   color: #ff0000;
   font-family: Roboto;
   font-weight: 900;
