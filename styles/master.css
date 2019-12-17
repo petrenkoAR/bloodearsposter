@@ -99,6 +99,10 @@ p {
   left: -10vw;
 }
 
+
+/*От 768px*/
+
+
 @media (min-width: 768px){
   .first img {
     width: 210vw;
@@ -125,6 +129,10 @@ p {
     left: -75%;
   }
 }
+
+
+/*От 1024px*/
+
 
 @media (min-width: 1024px){
   .h {
@@ -172,6 +180,10 @@ p {
     left: -35%;
   }
 }
+
+
+/*От 1280px*/
+
 
 @media (min-width: 1280px){
   .h {
