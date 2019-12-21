@@ -188,6 +188,7 @@ p {
     top: -1%;
     left: -15%;
     width: 120vw;
+    animation: none;
   }
   p {
     font-size: 7.5vh;
@@ -241,6 +242,6 @@ p {
 }
 @keyframes scale {
   50% {
-    transform: scale(0.99);
+    transform: scale(0.95);
   }
 }
