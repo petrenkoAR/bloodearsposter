@@ -197,11 +197,15 @@ p {
   .first_second img {
     top: 10vh;
   }
+  .first,
+  .second,
+  .third {
+    min-height: 374px;
+  }
 }
 
 
 /*От 1024px*/
-
 
 @media (min-width: 1024px){
   .header {
@@ -263,20 +267,28 @@ p {
   .first_second img {
     top: -15vh;
   }
+  .first,
+  .second,
+  .third {
+    min-height: 452px;
+  }
 }
 
 
 /*От 1280px*/
 
-
 @media (min-width: 1280px){
   .header {
     top: 10vh;
   }
-  p {
-    font-size: 7vh;
+  .first,
+  .second,
+  .third {
+    min-height: 497px;
   }
 }
+
+
 
 /* Анимация */
 
