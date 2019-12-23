@@ -9,10 +9,8 @@ body {
   box-sizing: border-box;
   background: #5606D4;
 }
-main {
-  z-index: 0;
-}
-.h {
+
+.header {
   width: 80vw;
   position: fixed;
   top: 30vh;
@@ -24,6 +22,7 @@ main {
   top: 5vh;
   left: 70vw;
 }
+
 .box {
   position: absolute;
   top: 0;
@@ -31,11 +30,41 @@ main {
   width: 100vw;
   overflow: hidden;
 }
+p {
+  z-index: 1;
+  color: #ff0000;
+  font-family: Roboto;
+  font-weight: 900;
+  font-size: 5.5vh;
+  line-height: 107%;
+}
+/*.info {
+  z-index: 2;
+  position: fixed;
+  width: 50vw;
+  height: 10vh;
+  padding: 1vh 1vw;
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid #f00;
+  top: 4vh;
+  right: 9vw;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: flex-end;
+}
+.info p {
+  font-size: 2vh;
+}
+.info:hover {
+  width: 20vw;
+}*/
 
 .first,
 .second,
 .third {
   height: 80vh;
+  min-height: 175px;
   width: 80vw;
   display: flex;
   flex-direction: column;
@@ -51,77 +80,81 @@ main {
 
 }
 
-.first img {
+.first img,
+.second img,
+.third img {
   z-index: -1;
   position: absolute;
-  transform: rotate(28deg);
-  top: 2%;
-  left: -20%;
-  width: 170vw;
-  animation: voise1 1s infinite;
 }
 .first .top,
 .second .top,
 .third .top {
   z-index: 1;
-  animation: hide 2s infinite;
 }
 
-p {
-  z-index: 1;
-  color: #ff0000;
-  font-family: Roboto;
-  font-weight: 900;
-  font-size: 5.5vh;
-  line-height: 107%;
+
+.first img {
+  transform: rotate(28deg);
+  top: 2%;
+  left: -20%;
+  width: 170vw;
+  animation: face-bottom-320 1s infinite;
 }
+.first .top {
+  animation: face-top-320 1s infinite;
+}
+
 
 .second img {
-  z-index: -1;
-  position: absolute;
   transform: rotate(-25deg);
   width: 210vw;
   top: 100vh;
   left: -75%;
-  animation: voise2 2s infinite;
+  animation: ear-first-bottom-320 2s infinite;
+}
+.second .top {
+  animation: ear-first-top-320 2s infinite;
 }
 
+
 .third img {
-  z-index: -1;
-  position: absolute;
   transform: rotate(15deg);
   width: 220vw;
   top: 198vh;
   left: -50%;
-  animation: voise3 1s infinite;
+  animation: ear-second-bottom-320 1.5s infinite;
 }
+.third .top {
+  animation: ear-second-top-320 1.5s infinite;
+}
+
 .mid {
   height: 0;
   width: 0;
 }
-.first_second img {
-  z-index: -1;
-  width: 220vw;
-  position: absolute;
-  top: 30vh;
-  left: -60vw;
-  animation: scale 0.5s infinite;
-}
-.second_third img {
-  z-index: -1;
-  width: 120vw;
-  position: absolute;
-  top: 140vh;
-  left: 0vw;
-  animation: scale 0.5s infinite;
-}
+.first_second img,
+.second_third img,
 .third_end img {
   z-index: -1;
-  width: 120vw;
   position: absolute;
+}
+.first_second img {
+  width: 220vw;
+  top: 30vh;
+  left: -60vw;
+  animation: single-scale 2s infinite;
+}
+.second_third img {
+  width: 120vw;
+  top: 140vh;
+  left: 0vw;
+  animation: single-scale 0.5s infinite;
+}
+.third_end img {
+  width: 120vw;
   top: 265vh;
   left: -10vw;
-  animation: scale 0.5s infinite;
+  animation: single-scale 1s infinite;
 }
 
 
@@ -134,8 +167,12 @@ p {
     transform: rotate(45deg);
     top: 3.8%;
     left: -36%;
+    animation: face-bottom-768 1s infinite;
   }
-  .h {
+  .first .top {
+    animation: face-top-768 1s infinite;
+  }
+  .header {
     top: 23vh;
   }
   p {
@@ -146,12 +183,19 @@ p {
     width: 240vw;
     top: 82vh;
     left: -90%;
+    animation: ear-first-bottom-768 2s infinite;
+  }
+  .second .top {
+    animation: ear-first-top-768 2s infinite;
   }
   .third img {
     transform: rotate(15deg);
     width: 250vw;
     top: 188vh;
     left: -75%;
+  }
+  .first_second img {
+    top: 10vh;
   }
 }
 
@@ -160,7 +204,7 @@ p {
 
 
 @media (min-width: 1024px){
-  .h {
+  .header {
     width: 70vw;
     top: 12vh;
     left: 15vw;
@@ -188,7 +232,10 @@ p {
     top: -1%;
     left: -15%;
     width: 120vw;
-    animation: none;
+    animation: face-bottom-1024 1s infinite;
+  }
+  .first .top {
+    animation: face-bottom-1024 1s infinite;
   }
   p {
     font-size: 7.5vh;
@@ -198,12 +245,23 @@ p {
     width: 160vw;
     top: 50vh;
     left: -35%;
+    animation: ear-first-bottom-1024 2s infinite;
+  }
+  .second .top {
+    animation: ear-first-top-1024 2s infinite;
   }
   .third img {
     transform: rotate(0deg);
     width: 150vw;
     top: 178vh;
     left: -35%;
+    animation: ear-second-bottom-1024 1.5s infinite;
+  }
+  .third .top {
+    animation: ear-second-top-1024 1.5s infinite;
+  }
+  .first_second img {
+    top: -15vh;
   }
 }
 
@@ -212,7 +270,7 @@ p {
 
 
 @media (min-width: 1280px){
-  .h {
+  .header {
     top: 10vh;
   }
   p {
@@ -220,28 +278,165 @@ p {
   }
 }
 
-@keyframes voise1 {
+/* Анимация */
+
+@keyframes face-bottom-320 {
   50% {
     transform: rotate(28deg) scaleY(1.1);
   }
 }
-@keyframes voise2 {
-  50% {
-    transform: rotate(-25deg) scaleY(1.1);
+@keyframes face-top-320 {
+  from {
+    opacity: 0;
   }
-}
-@keyframes voise3 {
   50% {
-    transform: rotate(15deg) scaleY(1.1);
+    transform: rotate(28deg) scaleY(1.1);
+    opacity: 1;
   }
-}
-@keyframes hide {
-  50% {
+  to {
     opacity: 0;
   }
 }
-@keyframes scale {
+
+@keyframes ear-first-bottom-320 {
   50% {
-    transform: scale(0.95);
+    transform: rotate(-25deg) scaleY(1.15);
+  }
+}
+@keyframes ear-first-top-320 {
+  from {
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(-25deg) scaleY(1.15);
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes ear-second-bottom-320 {
+  50% {
+    transform: rotate(15deg) scaleY(1.15);
+  }
+}
+@keyframes ear-second-top-320 {
+  from {
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(15deg) scaleY(1.15);
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes single-scale {
+  from {
+    opacity: 0.4;
+  }
+  50% {
+    transform: scaleY(1.05) scaleX(1.08);
+    opacity: 0.95;
+  }
+  to {
+    opacity: 0.4;
+  }
+}
+
+/* Анимация от 768 */
+
+@keyframes face-bottom-768 {
+  50% {
+    transform: rotate(45deg) scaleY(1.1);
+  }
+}
+@keyframes face-top-768 {
+  from {
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(45deg) scaleY(1.1);
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes ear-first-bottom-768 {
+  50% {
+    transform: rotate(18deg) scaleY(1.15);
+  }
+}
+@keyframes ear-first-top-768 {
+  from {
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(18deg) scaleY(1.15);
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/*  Анимация от 1024 */
+
+@keyframes face-bottom-1024 {
+  50% {
+    transform: rotate(0deg) scaleY(1.1);
+  }
+}
+@keyframes face-top-1024 {
+  from {
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(0deg) scaleY(1.1);
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes ear-first-bottom-1024 {
+  50% {
+    transform: rotate(0deg) scaleY(1.15);
+  }
+}
+@keyframes ear-first-top-1024 {
+  from {
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(0deg) scaleY(1.15);
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes ear-second-bottom-1024 {
+  50% {
+    transform: rotate(0deg) scaleY(1.15);
+  }
+}
+@keyframes ear-second-top-1024 {
+  from {
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(0deg) scaleY(1.15);
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
