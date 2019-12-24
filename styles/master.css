@@ -16,18 +16,13 @@ body {
   top: 30vh;
   left: 10vw;
 }
-.logo {
-  width: 20vw;
-  position: fixed;
-  top: 5vh;
-  left: 70vw;
-}
 
 .box {
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
+  height: 300vh;
   overflow: hidden;
 }
 p {
@@ -38,27 +33,24 @@ p {
   font-size: 5.5vh;
   line-height: 107%;
 }
-/*.info {
-  z-index: 2;
+.infobox {
   position: fixed;
-  width: 50vw;
-  height: 10vh;
-  padding: 1vh 1vw;
-  background: rgba(255, 255, 255, 0);
-  border: 1px solid #f00;
-  top: 4vh;
-  right: 9vw;
+  z-index: 3;
+  width: 22vh;
   display: flex;
   flex-direction: column;
-  align-items: left;
-  justify-content: flex-end;
+  align-items: flex-end ;
+  justify-content: space-between;
+  top: 5vh;
+  right: 5vw;
 }
-.info p {
-  font-size: 2vh;
-}
-.info:hover {
+.logo {
   width: 20vw;
-}*/
+  position: fixed;
+  z-index: 3;
+  top: 5vh;
+  right: 5vw;
+}
 
 .first,
 .second,
@@ -202,6 +194,9 @@ p {
   .third {
     min-height: 374px;
   }
+  .info {
+    top: 19vw;
+  }
 }
 
 
@@ -239,10 +234,10 @@ p {
     animation: face-bottom-1024 1s infinite;
   }
   .first .top {
-    animation: face-bottom-1024 1s infinite;
+    animation: face-top-1024 1s infinite;
   }
   p {
-    font-size: 7.5vh;
+    font-size: 7.3vh;
   }
   .second img {
     transform: rotate(0deg);
@@ -272,6 +267,23 @@ p {
   .third {
     min-height: 452px;
   }
+  .info {
+    transform: rotate(-90deg);
+    margin-right: -43%;
+    margin-top: 45%;
+    width: 22vh;
+    opacity: 0;
+  }
+  .info:hover {
+    width: 164%;
+    opacity: 1;
+    transition: 2s;
+    margin-right: -76%;
+    margin-top: 76%;
+  }
+  .info p {
+    font-size: 160%;
+  }
 }
 
 
@@ -285,6 +297,13 @@ p {
   .second,
   .third {
     min-height: 497px;
+  }
+  .info:hover {
+    width: 175%;
+    opacity: 1;
+    transition: 2s;
+    margin-right: -80%;
+    margin-top: 82%;
   }
 }
 
